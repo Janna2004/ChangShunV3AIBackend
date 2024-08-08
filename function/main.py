@@ -11,7 +11,7 @@ from PIL import Image
 
 def detect_objects(image_path):
     # 加载 YOLO 模型
-    model_path = "best.pt"
+    model_path = "/predict/function/best.pt"
     model = YOLO(model_path)
 
     # 使用 cv2.imread() 读取图像文件

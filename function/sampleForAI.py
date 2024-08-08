@@ -14,7 +14,7 @@ def detect():
     file = request.files['image']
 
     # 将图像文件保存到临时目录
-    temp_file_path = f'uploads/{file.filename}'
+    temp_file_path = f'/predict/function/uploads/{file.filename}'
     file.save(temp_file_path)
 
 
@@ -98,6 +98,6 @@ def detect():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(host='0.0.0.0', port=5000)
 
 

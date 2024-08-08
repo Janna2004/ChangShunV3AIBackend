@@ -1,7 +1,7 @@
-flask~=2.2.2
-ultralytics~=8.0.52
-opencv-python~=4.6.0.66
-torch~=1.12.1
+flask==2.2.5
+ultralytics~=8.2.53
+opencv-python-headless~=4.6.0.66
+torch~=2.0.0
 torchvision~=0.15.0
-numpy~=1.23.4
+numpy~=1.23.5
 Pillow~=10.3.0
