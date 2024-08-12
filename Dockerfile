@@ -1,11 +1,9 @@
 # 使用官方的Python 3.8镜像作为基础镜像
 FROM python:3.8
-# 设置工作目录
-WORKDIR /predict
-# 将当前目录内容复制到容器的/app目录下
-COPY . /predict
-# 创建 uploads 目录
-RUN mkdir -p /predict/function/uploads
+# 设置工作目录为 /function
+WORKDIR /function
+# 将当前目录中的 function 目录内容复制到容器的 /function 目录中
+COPY function /function
 
 # 安装任何需要的包
 RUN echo "deb http://mirrors.aliyun.com/debian/ buster main non-free contrib" > /etc/apt/sources.list.d/aliyun.list

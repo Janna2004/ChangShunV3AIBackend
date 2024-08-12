@@ -11,7 +11,8 @@ from PIL import Image
 
 def detect_objects(image_path):
     # 加载 YOLO 模型
-    model_path = "/predict/function/best.pt"
+    # model_path = "/predict/function/best.pt"
+    model_path = "best.pt"
     model = YOLO(model_path)
 
     # 使用 cv2.imread() 读取图像文件
@@ -59,9 +60,11 @@ def classify_image(img_path):
     device = 'cuda:0'
     device = torch.device(device if torch.cuda.is_available() else 'cpu')
     # 载入类别标签
+    # idx_to_labels = np.load(r"/predict/function/idx_to_labels.npy", allow_pickle=True).item()
     idx_to_labels = np.load(r"./idx_to_labels.npy", allow_pickle=True).item()
 
     # 导入训练好的模型
+    # model = torch.load(r"/predict/function/dataset0_pytorch_C1.pth", map_location=device)
     model = torch.load(r"./dataset0_pytorch_C1.pth", map_location=device)
     model = model.eval().to(device)
 
