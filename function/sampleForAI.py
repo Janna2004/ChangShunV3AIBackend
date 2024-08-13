@@ -114,7 +114,7 @@ def detect():
             message_data = {
                 "image_paths": [
                     {
-                        "path": "tempor"
+                        "path": "/function/"+temp_file_path
                     }
                 ],
                 "field_id": None,
@@ -123,6 +123,7 @@ def detect():
                 "pest_type_id": pest_type_id,
                 "pest_probability": pest_probability
             }
+            print(message_data)
             status_code, response_data = addDetInfo(message_data)
             if status_code != 200:
                 return jsonify({"msg": "Failed to send message to server", "status_code": status_code})
