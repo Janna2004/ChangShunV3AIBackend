@@ -65,15 +65,15 @@ diseases = [
 
 
 def addDetInfo(data):
-    #! url = "http://chang-shun-v3-backend:9003/ai/detInfo"  # 替换为你的服务器地址和API端点
-    url = "http://127.0.0.1:9003/ai/detInfo"
+    url = "http://chang-shun-v3-backend:9003/ai/detInfo"  # 替换为你的服务器地址和API端点
+    #! url = "http://127.0.0.1:9003/ai/detInfo"
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, headers=headers, json=data)
     return response.status_code, response.json()
 
 def addAlert(data):
-    #! url = "http://chang-shun-v3-backend:9003/ai/alert"  # 替换为你的服务器地址和API端点
-    url = "http://127.0.0.1:9003/ai/alert"
+    url = "http://chang-shun-v3-backend:9003/ai/alert"  # 替换为你的服务器地址和API端点
+    #! url = "http://127.0.0.1:9003/ai/alert"
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, headers=headers, json=data)
     return response.status_code, response.json()
