@@ -16,54 +16,64 @@ diseases = [
     {
         "id": 1,
         "name": "细菌性叶枯病",
+        "type": "bacterial_leaf_blight",
         "description": "患病现象：细菌性叶枯病初期叶片出现长条形、水浸状的病斑,呈灰绿色。病斑不断扩大,最终导致整个叶片枯萎。严重时,可导致稻穗不发育或者死亡。控制措施: 合理施肥,避免氮肥过量。及时清理田间作物残渣。适当防治,如喷洒杀菌剂。"
     },
     {
         "id": 2,
         "name": "细菌性叶斑病",
+        "type": "bacterial_leaf_streak",
         "description": "患病现象: 在叶片上出现不规则形状的褐色或黄褐色斑点,斑点常沿叶脉延伸。严重时斑点会扩大,叶片出现大片死亡。病斑表面常有细菌状物质渗出。病叶常卷曲、枯萎。控制措施: 注意田间卫生,避免伤害植株。适时进行药剂防治,如使用铜制剂、多霉素等。配合农业措施,如轮作、施肥等。"
     },
     {
         "id": 3,
         "name": "稻瘟病",
+        "type": "blast",
         "description": "患病现象: 叶片上出现长椭圆形的白色或灰白色病斑,边缘褐色。病斑逐渐扩大,叶片枯萎死亡。严重时整个叶面积大量枯死,秆也会倒伏。颗粒满度降低,产量大幅下降。控制措施: 适时喷洒杀菌剂,如吡唑醚菌酯、戊唑醇等。合理施肥,增强作物抗病性。轮作或休耕等综合防控措施。"
     },
     {
         "id": 4,
         "name": "褐斑病",
+        "type": "brown_spot",
         "description": "患病现象: 在叶片、茎秆上出现圆形或不规则的褐色或紫褐色斑点。病斑表面干燥,中间常有凹陷。严重时病斑会扩大,叶片枯萎脱落。在茎秆、花梗和块茎上也会出现类似病斑。块茎上的病斑往往不规则,严重时会全面腐烂。控制措施: 适时喷洒杀菌剂,如巴斯德菌素、多菌灵等。及时清理病株残体,保持田间卫生。采取轮作、合理施肥等综合防控措施。"
     },
     {
         "id": 5,
         "name": "心腐病",
+        "type": "dead_heart",
         "description": "患病现象: 病害首先发生在植株心叶部位,导致心叶枯黄、卷曲。进一步发展时,心叶会完全枯死,呈黑褐色。严重时,整个植株菜心部位全部腐烂,呈现烂心症状。受染植株生长受阻,株高明显矮小。还会引起糖分含量降低,严重影响产量和品质。控制措施: 适时喷洒铜制剂等杀菌剂进行药剂防治。保持良好的田间卫生,清理病株残体。合理施肥,增强植株抗病能力。"
     },
     {
         "id": 6,
         "name": "霜霉病",
+        "type": "downy_mildew",
         "description": "患病现象: 初发时叶片上出现不规则的黄色或褐色斑点。斑点逐渐扩大,叶片变成灰白色或紫色,呈现霜霉样。严重时,整个叶片枯萎脱落,茎干也会出现病斑。在果实或块茎上也会出现类似症状,严重影响品质。潮湿天气下,病斑表面还会出现白色或灰色的霉状物。控制措施: 注重田间管理,保持良好通风透光条件。适时喷洒如噻菌灵、代森锰锌等杀菌剂。及时清理病株残体,避免病菌越冬传播。"
     },
     {
         "id": 7,
         "name": "褐飞虱",
+        "type": "hispa",
         "description": "患病现象: 叶片、茎秆上出现褐色或紫褐色的圆形或不规则斑点。病斑表面干燥,中间常有凹陷。严重时病斑扩大,叶片枯萎脱落茎秆、花梗和块茎上也会出现类似病斑。块茎病斑不规则,严重时腐烂。控制措施: 适时喷洒杀菌剂。清理病株残体,保持田间卫生。采取轮作、合理施肥等综合防控。"
     },
     {
         "id": 8,
         "name": "稻瘟病毒病",
+        "type": "tungro",
         "description": "患病现象: 叶片出现淡绿色或黄绿色条纹或斑块。病叶呈现波浪状弯曲或卷曲。严重时植株矮化,分蘖受抑制。出现白化或枯死的病斑。稻穗畸形或不能抽出。控制措施: 切断病毒媒介的传播渠道,如合理用药防治白背飞虱。及时清除病株,保持良好的田间卫生。合理施肥,增强植株抗病力。对种子进行热处理或化学消毒。"
     }
 ]
 
 
 def addDetInfo(data):
-    url = "http://chang-shun-v3-backend:9003/ai/detInfo"  # 替换为你的服务器地址和API端点
+    #! url = "http://chang-shun-v3-backend:9003/ai/detInfo"  # 替换为你的服务器地址和API端点
+    url = "http://127.0.0.1:9003/ai/detInfo"
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, headers=headers, json=data)
     return response.status_code, response.json()
 
 def addAlert(data):
-    url = "http://chang-shun-v3-backend:9003/ai/alert"  # 替换为你的服务器地址和API端点
+    #! url = "http://chang-shun-v3-backend:9003/ai/alert"  # 替换为你的服务器地址和API端点
+    url = "http://127.0.0.1:9003/ai/alert"
     headers = {'Content-Type': 'application/json'}
     response = requests.post(url, headers=headers, json=data)
     return response.status_code, response.json()
@@ -97,6 +107,7 @@ def detect():
         elif result["state"] == 1:
             with open(result["image"], 'rb') as f:
                 image_data = base64.b64encode(f.read()).decode('utf-8')
+            print(result)
             # 获取第一个患病种类
             disease_type = result["type"][0] if result["type"] else None
             # 获取第一个患病概率
@@ -105,9 +116,10 @@ def detect():
             content = None
             pest_type_id = None
             for disease in diseases:
-                if disease_type == disease["name"]:
+                if disease_type == disease["type"]:
                     content = disease["description"]
                     pest_type_id = disease["id"]
+                    name = disease["name"]
                     break
 
             # 将结果返回给服务器
@@ -123,16 +135,18 @@ def detect():
                 "pest_type_id": pest_type_id,
                 "pest_probability": pest_probability
             }
-            print(message_data)
+            # print(message_data)
             status_code, response_data = addDetInfo(message_data)
+            # print("a data send")
             if status_code != 200:
                 return jsonify({"msg": "Failed to send message to server", "status_code": status_code})
 
             detection_info_id = response_data['data']['detection_info_id']
+            # print(detection_info_id)
             return jsonify({
                 'image': image_data,
                 'state': 1,
-                'type': disease_type,
+                'type': name,
                 'conf': pest_probability,
                 'content': content,
                 'time': time_str,
