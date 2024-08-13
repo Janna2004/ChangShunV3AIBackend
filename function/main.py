@@ -49,7 +49,7 @@ def detect_objects(image_path):
             # 返回结果信息
             return {
                 "state": 1,
-                "image": save_dir + "\\" + image_name,
+                "image": os.path.join(save_dir, image_name),
                 "type": type,
                 "conf": conf,
             }
